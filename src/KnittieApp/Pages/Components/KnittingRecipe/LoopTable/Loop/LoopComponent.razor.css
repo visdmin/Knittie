@@ -1,0 +1,23 @@
+.knitting-loop {
+    height: 25px;
+    width: 25px;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: #d5cfd5;
+}
+
+.description {
+    color: black;
+    font-size: 12px;
+}
+
+.knitting-loop-icon {
+    font-style: normal;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}

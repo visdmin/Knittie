@@ -1,0 +1,26 @@
+@namespace KnittieApp.Pages.Components.KnittingRecipe
+
+<tr>
+    @if (Data is null) {
+        <p>Loading row...</p>
+    }
+    else if (Data.Loops is null || Data.Loops.Count == 0) {
+        <p>Empty row</p>
+    }
+    else {
+        <td>
+            <p class="rowIndex">@Data.RowIndex</p>
+        </td>
+        @foreach (var loop in Data.Loops)
+        {
+            <td>
+                <LoopComponent Data="@loop"></LoopComponent>
+            </td>
+        }
+    }
+</tr>
+
+@code {
+    [Parameter]
+    public LoopRow? Data { get; set; } = null;
+}

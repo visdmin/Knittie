@@ -1,0 +1,19 @@
+﻿@page "/recepies"
+@inject HttpClient Http
+@using KnittieApp.Pages.Components.KnittingRecipe
+
+<PageTitle>Recepies</PageTitle>
+
+<h1>Recepies</h1>
+
+<RecipeComponent Data=@Recipe></RecipeComponent>
+
+@code {
+    private Recipe Recipe = new Recipe(
+        id:          "some",
+        name:        "Cool socks",
+        creatorId:   "visdmin",
+        description: "My cool pattern for creating fabulous socks",
+        loopTable:   new (width: 25, height: 25)
+    );
+}

@@ -1,0 +1,23 @@
+@namespace KnittieApp.Pages.Components.KnittingRecipe
+
+
+<div class="knitting-loop">
+@if (Data is null) {
+    <p>Loading loop...</p>
+} else {
+    <p class="description @((_showDescription) ? String.Empty : "hidden")">@Data.Description</p>
+
+    @if (Data.Type == LoopType.NONE) {
+        <p class=".knitting-loop-icon"></p>
+    } else {
+        <p class=".knitting-loop-icon">X</p>
+    }
+}
+</div>
+
+@code {
+    [Parameter]
+    public Loop? Data { get; set; } = null;
+    private bool _showDescription { get; set; } = false;
+
+}

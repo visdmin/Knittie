@@ -1,0 +1,20 @@
+@namespace KnittieApp.Pages.Components.KnittingRecipe
+
+@if (Data is null) {
+    <p>Loading the recipe</p>
+} else {
+    <h3>@Data.Name</h3>
+    <p>@Data.Description</p>
+
+    @if (Data.LoopTable is null) {
+        <p>Recipe does not have loop table</p>
+    } else {
+        <LoopTableComponent Data=Data.LoopTable></LoopTableComponent>
+    }
+}
+
+
+@code {
+    [Parameter]
+    public Recipe? Data { get; set; } = null;
+}

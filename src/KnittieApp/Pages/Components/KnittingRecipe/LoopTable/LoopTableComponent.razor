@@ -1,0 +1,25 @@
+@namespace KnittieApp.Pages.Components.KnittingRecipe
+
+<div class="loopTableContainer">
+    @if (Data is null) {
+        <p>Loading loops..</p>
+    }
+    else if (Data.Rows is null) {
+        <p>Recipe is empty</p>
+        <table>
+        </table>
+    }
+    else {
+        <table class="loopTable">
+        @foreach (var row in Data.Rows)
+        {
+            <LoopRowComponent Data=row></LoopRowComponent>
+        }
+        </table>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public LoopTable? Data { get; set; } = null;
+}
